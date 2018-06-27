@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="draft1javascript.js"></script>
+    <link rel="stylesheet" href="draft1style.css">
+    <title>Dimensional Analysis Prototype</title>
+  </head>
+
+
+  <body>
+    <div id="conversionfactor-all">
+    <h1>Conversion Factors<h2>
+      <div id="factor-container">
+        <div class="wrap" style="top: 10px;left:10px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data1" draggable="true" ondragstart="drag(event)" ondragenter="dragEnter(event)">
+            <p id="1">1000 gram H<sub>2</sub>O</p><hr><p id="2">1 kilogram H<sub>2</sub>O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 10px;left:210px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data2" draggable="true" ondragstart="drag(event)">
+            <p id="3">1 mol H<sub>2</sub>O</p><hr><p id="4">6.022x10<sup>23</sup> molecules</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 10px;left:410px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data3" draggable="true" ondragstart="drag(event)">
+            <p id="5">1 dozen H<sub>2</sub>O</p><hr><p id="6">12 molecules H<sub>2</sub>O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 130px;left:10px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data4" draggable="true" ondragstart="drag(event)">
+            <p id="7">2.2 lbs H<sub>2</sub>O </p><hr><p id="8">1 kilogram H<sub>2</sub>O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 130px;left:210px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data5" draggable="true" ondragstart="drag(event)">
+            <p id="9">1 mole O </p><hr><p id="10">16.00 gram O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 130px;left:410px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data6" draggable="true" ondragstart="drag(event)">
+            <p id="11">18.02 grams H<sub>2</sub>O</p><hr><p id="12">1 mole H2O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 250px;left:10px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data7" draggable="true" ondragstart="drag(event)">
+            <p id="13">1 mole H2O </p><hr><p id="14">6.022x10<sup>23</sup> molecules</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 250px;left:210px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data8" draggable="true" ondragstart="drag(event)">
+            <p id="15">2 mole H </p><hr><p id="16">1 mole H<sub>2</sub>O</p>
+          </div>
+        </div>
+
+        <div class="wrap" style="top: 250px;left:410px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="data9" draggable="true" ondragstart="drag(event)">
+            <p id="17">1 mole O </p><hr><p id="18"> 1 mole H<sub>2</sub>O</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <div id="fullequation">
+      <div id="value">
+        <input type="text">
+        <select>
+          <option value="units">units</option>
+          <option value="g">g H2O</option>
+          <option value="molecules H2O">molecules H2O</option>
+          <option value="mol H2O">mol H2O</option>
+          <option value="lbs H2O">lbs H2O</option>
+        </select>
+
+        <!-- <div class="bootstrap-iso">
+          <div class="dropdown">
+            <button type="button" data-toggle="dropdown">
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </div>
+        </div> -->
+
+      </div>
+
+      <div id="conversionall">
+        <div id="conversion-container">
+          <div class="sign">
+            x
+          </div>
+
+          <div id="conversion-factor">
+            <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)" >
+              <button id="switch">⇵</button>
+            </div>
+
+            <button type="button" id="add-conversionfactor">
+              + Conversion Factor
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sign">
+        =
+      </div>
+
+      <div id="answer">
+        1.89E22
+      </div>
+    </div>
+  </body>
+</html>

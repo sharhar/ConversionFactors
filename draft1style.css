@@ -1,0 +1,155 @@
+body {
+  background-color: lightblue;
+  font-family: helvetica;
+}
+
+#fullequation {
+  display: flex;
+  flex-direction: row;
+}
+
+#value {
+  height: 50px;
+  width: 220px;
+  background-color: white;
+  border-radius: 3px;
+  display: flex;
+  margin-top: 25px;
+}
+
+input[type="text"]
+{
+  background-color: lightgrey;
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+  margin: auto;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+select {
+  margin: auto;
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sign {
+  color: white;
+  font-size: 45px;
+  padding: 20px;
+  margin-left: 5px;
+}
+
+#conversionall {
+  flex-direction: row;
+  display: flex;
+}
+
+#conversion-container {
+  flex-direction: row;
+  display: flex;
+}
+
+#conversion-factor {
+  align-items: center;
+}
+
+#drop {
+  width: 180px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px dotted white;
+  background-color: grey;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  background-image: url("thing.png");
+  position: relative;
+}
+
+#add-conversionfactor {
+  width: 170px;
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  padding: 6px;
+  font-size: 12px;
+  margin: 5px;
+}
+
+#answer {
+  color: white;
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+#conversionfactor-all {
+  background-color: darkgrey;
+  width: 650px;
+  text-align: center;
+}
+
+#x {
+  position: absolute;
+  background: red;
+  color: white;
+  top: -5px;
+  right: -5px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#switch {
+  font-size: 20px;
+  position: absolute;
+  top: 35px;
+  right: -15px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+}
+
+h1 {
+  padding: 15px;
+}
+
+#factor-container {
+  height: 400px;
+  width: 600px;
+  /* flex-direction: row; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  margin-left: 20px;
+  position: relative;
+}
+
+.wrap {
+  margin: 10px;
+  background-color: grey;
+  position: absolute;
+  height: 100px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+#data1, #data2, #data3, #data4, #data5, #data6, #data7, #data8, #data9 {
+  width: 150px;
+  height: 90px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: move;
+}
+
+hr {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
