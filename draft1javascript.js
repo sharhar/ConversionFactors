@@ -1,13 +1,21 @@
 $(document).on('click', '#add-conversionfactor', function(){
   // $("#conversion-container").clone(true).appendTo($("#conversionall"));
+  
+  $(this).remove();
+
   var e = $(
     '<div id="conversion-container"><div class="sign">x</div> <div id="conversion-factor"><div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><button id="x">&times;</button><button id="switch">⇵</button></div><button id="add-conversionfactor">+ Conversion Factor</button></div></div>'
   );
+
   $("#conversionall").append(e);
 });
 
 $(document).on('click', '#x', function(){
-  $(this.parentNode.parentNode.parentNode).hide();
+  var hasAddButton = $(this).parent().parent().find("#add-conversionfactor").length == 1; // this check has to be done before the element is deleted in the next line
+  $(this.parentNode.parentNode.parentNode).remove();
+  if(hasAddButton) {
+    $($("#conversionall")[0].lastElementChild.lastElementChild).append('<button id="add-conversionfactor">+ Conversion Factor</button>'); //this must be called after the deletion because of the lastElementChild references that are used
+  }
 });
 
 
@@ -41,22 +49,3 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
-
-// function dragEnter(ev) {
-//   if ($("#data1").parents("#conversion-container").length == 1) {
-//     $(function() {
-//       $("#conversionfactor-all").mouseenter(function(){
-//         $("#conversion-container").hide();
-//       });
-//     });
-//   }
-// }
-
-// $(function() {
-//   $("#data1").draggable({
-//     cursorAt: {
-//         bottom: -10,
-//         right: -10,
-//     }
-//   });
-// });
