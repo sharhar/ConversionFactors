@@ -9,6 +9,15 @@ $(document).on('click', '#add-conversionfactor', function(){
 });
 
 $(document).on('click', '#x', function(){
+  if($(this).parent().parent().find("#drop")[0].lastElementChild.id.startsWith("data")) {
+    for(var index = 0; index < 9; index++) {
+      if($("#factor-container")[0].children[index].lastElementChild == null) {
+        $($("#factor-container")[0].children[index]).append($($(this).parent().parent().find("#drop")[0].lastElementChild).clone(true));
+        break;
+      }
+    }
+  }
+
   var hasAddButton = $(this).parent().parent().find("#add-conversionfactor").length == 1; // this check has to be done before the element is deleted in the next line
   $(this.parentNode.parentNode.parentNode).remove();
   if(hasAddButton) {
