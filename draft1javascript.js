@@ -9,10 +9,12 @@ $(document).on('click', '#add-conversionfactor', function(){
 });
 
 $(document).on('click', '#x', function(){
+  var needsUpdate = false;
   if($(this).parent().parent().find("#drop")[0].lastElementChild.id.startsWith("data")) {
     for(var index = 0; index < 9; index++) {
       if($("#factor-container")[0].children[index].lastElementChild == null) {
         $($("#factor-container")[0].children[index]).append($($(this).parent().parent().find("#drop")[0].lastElementChild).clone(true));
+        needsUpdate = true;
         break;
       }
     }
@@ -22,6 +24,10 @@ $(document).on('click', '#x', function(){
   $(this.parentNode.parentNode.parentNode).remove();
   if(hasAddButton) {
     $($("#conversionall")[0].lastElementChild.lastElementChild).append('<button id="add-conversionfactor">+ Conversion Factor</button>'); //this must be called after the deletion because of the lastElementChild references that are used
+  }
+
+  if(needsUpdate) {
+    updateValue();
   }
 });
 
@@ -38,6 +44,7 @@ jQuery.fn.swapWith = function(to) {
 $(document).on('click', '#switch', function(){
   if ($(this.parentNode.lastChild).parents(this.parentNode).length == 7) {
     $(this.parentNode.lastChild.childNodes[1]).swapWith($(this.parentNode.lastChild.childNodes[3]));
+    updateValue();
   }
 });
 
@@ -59,6 +66,31 @@ function drop(ev) {
 }
 
 function updateValue() {
-  $("#answer").html($("#text-id").val() + " " + $("#unit-id").val());
+  var inp = parseFloat($("#text-id").val());
+  var allconv = $("#conversionall")[0];
+  for(var index = 0; index < allconv.childElementCount;index++) {
+    if(allconv.children[index].lastElementChild.firstElementChild.lastElementChild.id.startsWith("data")) {
+      var num_s = allconv.children[index].lastElementChild.firstElementChild.lastElementChild.firstElementChild.innerHTML.split(" ")[0].split("x");
+      var den_s = allconv.children[index].lastElementChild.firstElementChild.lastElementChild.lastElementChild.innerHTML.split(" ")[0].split("x");
+
+      var num = parseFloat(num_s[0]);
+      var den = parseFloat(den_s[0]);
+
+      if(num_s.length > 1) {
+        num = num * Math.pow(10, parseFloat(num_s[1].split(">")[1]));
+      }
+
+      if(den_s.length > 1) {
+        den = den * Math.pow(10, parseFloat(den_s[1].split(">")[1]));
+      }
+
+      inp = inp * num;
+      inp = inp / den;
+    }
+  }
+
+  //console.log(allconv);
+
+  $("#answer").html(inp + " " + $("#unit-id").val());
 
 }
