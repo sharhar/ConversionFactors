@@ -71,9 +71,8 @@
 
     <div id="fullequation">
       <div id="value">
-        <input type="text">
-        <select>
-          <option value="units">units</option>
+        <input type="text" id="text-id" value="1" onkeyup="updateValue()">
+        <select id="unit-id" onchange="updateValue()">
           <option value="g">g H2O</option>
           <option value="molecules H2O">molecules H2O</option>
           <option value="mol H2O">mol H2O</option>
@@ -117,7 +116,7 @@
       </div>
 
       <div id="answer">
-        1.89E22
+        1 g
       </div>
     </div>
   </body>

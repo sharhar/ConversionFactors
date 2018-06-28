@@ -1,6 +1,4 @@
 $(document).on('click', '#add-conversionfactor', function(){
-  // $("#conversion-container").clone(true).appendTo($("#conversionall"));
-  
   $(this).remove();
 
   var e = $(
@@ -48,4 +46,10 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
+  updateValue();
+}
+
+function updateValue() {
+  $("#answer").html($("#text-id").val() + " " + $("#unit-id").val());
+
 }
