@@ -40,7 +40,6 @@ select {
   color: white;
   font-size: 45px;
   padding: 20px;
-  margin-left: 5px;
 }
 
 #conversionall {
@@ -58,7 +57,7 @@ select {
 }
 
 #drop {
-  width: 180px;
+  width: 170px;
   height: 100px;
   border-radius: 10px;
   border: 2px dotted white;
@@ -66,7 +65,7 @@ select {
   color: black;
   text-align: center;
   font-size: 14px;
-  background-image: url("thing.png");
+  background-image: url("conversiondrop.png");
   position: relative;
 }
 
@@ -131,19 +130,19 @@ h1 {
   background-color: grey;
   position: absolute;
   height: 100px;
-  width: 180px;
+  width: 170px;
   border-radius: 10px;
 }
 
 #data1, #data2, #data3, #data4, #data5, #data6, #data7, #data8, #data9 {
   width: 150px;
-  height: 90px;
+  height: 95px;
   border-radius: 10px;
   background-color: white;
   text-align: center;
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: move;
