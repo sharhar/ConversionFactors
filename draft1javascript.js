@@ -89,6 +89,12 @@ function updateValue() {
     }
   }
 
+  if (inp.toString().length < 9) {
+    inp = Number(Math.round(inp+'e4')+'e-4');
+  } else {
+    inp = inp.toPrecision(4);
+  }
+  
   //console.log(allconv);
 
   $("#answer").html(inp + " " + $("#unit-id").val());
