@@ -39,7 +39,7 @@
 
         <div class="wrap" style="top: 130px;left:210px;" ondrop="drop(event)" ondragover="allowDrop(event)">
           <div id="data5" draggable="true" ondragstart="drag(event)">
-            <p>1 mol O </p><hr><p>16.00 g O</p>
+            <p>1 mol O</p><hr><p>16.00 g O</p>
           </div>
         </div>
 
@@ -51,19 +51,19 @@
 
         <div class="wrap" style="top: 250px;left:10px;" ondrop="drop(event)" ondragover="allowDrop(event)">
           <div id="data7" draggable="true" ondragstart="drag(event)">
-            <p>1 mol H </p><hr><p>6.022x10<sup>23</sup> molecules</p>
+            <p>1 mol H</p><hr><p>6.022x10<sup>23</sup> molecules</p>
           </div>
         </div>
 
         <div class="wrap" style="top: 250px;left:210px;" ondrop="drop(event)" ondragover="allowDrop(event)">
           <div id="data8" draggable="true" ondragstart="drag(event)">
-            <p>2 mol H </p><hr><p>1 mol H<sub>2</sub>O</p>
+            <p>2 mol H</p><hr><p>1 mol H<sub>2</sub>O</p>
           </div>
         </div>
 
         <div class="wrap" style="top: 250px;left:410px;" ondrop="drop(event)" ondragover="allowDrop(event)">
           <div id="data9" draggable="true" ondragstart="drag(event)">
-            <p>1 mol O </p><hr><p> 1 mol H<sub>2</sub>O</p>
+            <p>1 mol O</p><hr><p>1 mol H<sub>2</sub>O</p>
           </div>
         </div>
     </div>
@@ -73,10 +73,10 @@
       <div id="value">
         <input type="text" id="text-id" value="1" onkeyup="updateValue()">
         <select id="unit-id" onchange="updateValue()">
-          <option value="g">g H2O</option>
-          <option value="molecules H2O">molecules H2O</option>
-          <option value="mol H2O">mol H2O</option>
-          <option value="lbs H2O">lbs H2O</option>
+          <option value="g H<sub>2</sub>O">g H2O</option>
+          <option value="molecules H<sub>2</sub>O">molecules H2O</option>
+          <option value="mol H<sub>2</sub>O">mol H2O</option>
+          <option value="lbs H<sub>2</sub>O">lbs H2O</option>
         </select>
 
         <!-- <div class="bootstrap-iso">
@@ -115,9 +115,13 @@
         =
       </div>
 
-      <div id="answer">
-        1 g
-      </div>
+      <p id="number">
+        1
+      </p>
+
+      <p id="unit">
+        g H<sub>2</sub>O
+      </p>
     </div>
   </body>
 </html>
