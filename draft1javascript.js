@@ -67,6 +67,7 @@ function drop(ev) {
 
 function updateValue() {
   var inp = parseFloat($("#text-id").val());
+  var unit = $("#unit-id").val();
   var allconv = $("#conversionall")[0];
   for(var index = 0; index < allconv.childElementCount;index++) {
     if(allconv.children[index].lastElementChild.firstElementChild.lastElementChild.id.startsWith("data")) {
@@ -86,17 +87,35 @@ function updateValue() {
 
       inp = inp * num;
       inp = inp / den;
+
+      //
+
+      var num_unit = allconv.children[index].lastElementChild.firstElementChild.lastElementChild.firstElementChild.innerHTML.split(" ")[1].split("x") + " " + allconv.children[index].lastElementChild.firstElementChild.lastElementChild.firstElementChild.innerHTML.split(" ")[2].split("x");
+      var den_unit = allconv.children[index].lastElementChild.firstElementChild.lastElementChild.lastElementChild.innerHTML.split(" ")[1].split("x") + " " + allconv.children[index].lastElementChild.firstElementChild.lastElementChild.lastElementChild.innerHTML.split(" ")[2].split("x");
+
+
+      console.log(num_unit)
+
     }
   }
+
+  unit = unit + " * " + num_unit + "<hr id='hr-unit'>" + den_unit;
+
 
   if (inp.toString().length < 9) {
     inp = Number(Math.round(inp+'e4')+'e-4');
   } else {
     inp = inp.toPrecision(4);
   }
-  
-  //console.log(allconv);
 
-  $("#answer").html(inp + " " + $("#unit-id").val());
 
+  $("#number").html(inp + " ");
+  $("#unit").html(unit);
 }
+
+
+// if (den_unit == $("#unit-id").val()) {
+//   unit = num_unit;
+// } else {
+//   unit = unit + " * " + num_unit + "<hr id='hr-unit'>" + den_unit;
+// }
