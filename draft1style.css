@@ -79,10 +79,11 @@ select {
   margin: 5px;
 }
 
-#answer {
+#number, #unit {
   color: white;
   font-size: 35px;
   margin-top: 30px;
+  margin-right: 10px;
 }
 
 #conversionfactor-all {
@@ -151,4 +152,9 @@ h1 {
 hr {
   margin-top: -10px;
   margin-bottom: -10px;
+}
+
+#hr-unit {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
